@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="side-box">
+            <h1>Text To Speech Converter</h1>
+        </div>
+        <div id="outer-box">
+            <form>
+                <textarea id="text" class="input-field" placeholder="Start typing your text.."></textarea>
+
+
+                <img class="btn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9dCoa77koanD6lQOe8DsDj09NIYuYh-aMpbSsu1hC8Co-zttsIxJfGn3igCaEiHxa16c&usqp=CAU" onclick="play()">
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        function play() {
+            let str = document.getElementById("text").value;
+            var msg = new SpeechSynthesisUtterance(str);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</body>
+
+
+</html>
